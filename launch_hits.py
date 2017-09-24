@@ -12,7 +12,7 @@ if __name__ == '__main__':
   parser = argparse.ArgumentParser(parents=[simpleamt.get_parent_parser()])
   parser.add_argument('--hit_properties_file', type=argparse.FileType('r'))
   parser.add_argument('--html_template')
-  parser.add_argument('--input_json_file', type=argparse.FileType('r'))
+  parser.add_argument('--input_json_file', type=argparse.FileType('r'))  # contains inputs for the HITs that you want to create
   args = parser.parse_args()
 
   mtc = simpleamt.get_mturk_connection_from_args(args)

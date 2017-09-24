@@ -15,7 +15,7 @@
       return match ? decodeURIComponent(match[1].replace(/\+/g, ' ')) : null;
     }
 
-    function getInput(default_input) {
+    function getInput(default_input) {  //parse the input json file into this HIT
       if (typeof(default_input) === 'undefined') default_input = null;
       try {
         return JSON.parse($('#input').html());
@@ -24,7 +24,7 @@
       }
     }
 
-    function setOutput(output) {
+    function setOutput(output) { //store the output 
       $('#output').val(JSON.stringify(output));
     }
 
@@ -36,7 +36,7 @@
 
     function setupSubmit() {
       var submit_to = getUrlParam('turkSubmitTo');
-      $('#results-form').attr('action', submit_to + '/mturk/externalSubmit');                      
+      $('#results-form').attr('action', submit_to + '/mturk/externalSubmit');  //submit to the sandbox site (workersandbox.mturk.com) or live site (sandbox.mturk.com)                   
       $('#assignmentId').val(getUrlParam('assignmentId'));
     }
 

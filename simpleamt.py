@@ -14,7 +14,7 @@ def get_jinja_env(config):
   """
   Get a jinja2 Environment object that we can use to find templates.
   """
-  return Environment(loader=FileSystemLoader('.'))
+  return Environment(loader=FileSystemLoader('./hit_templates/'))
 
 
 def json_file(filename):
@@ -32,7 +32,7 @@ def get_parent_parser():
                       help="Whether to run on the production AMT site.")
   parser.add_argument('--hit_ids_file')
   parser.add_argument('--config', default='config.json',
-                      type=json_file)
+                      type=json_file) # a callable function, will return the processed obj.
   return parser
 
 

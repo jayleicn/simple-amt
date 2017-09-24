@@ -10,7 +10,7 @@ if __name__ == '__main__':
   env = simpleamt.get_jinja_env(args.config)
   template = env.get_template(args.html_template)
 
-  html = template.render({'input': ''})
+  html = template.render({'input': ''}) #   {{ input }}
   with open(args.rendered_html, 'w') as f:
     f.write(html)
 
